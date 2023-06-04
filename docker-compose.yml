@@ -1,0 +1,17 @@
+version: '3'
+
+services:
+  database:
+    image: postgres:10.17
+    container_name: app-adonis
+    restart: always
+    environment:
+      - 'POSTGRES_USER=postgres'
+      - 'POSTGRES_PASSWORD=5550123'
+      - 'POSTGRES_SB=adonis'
+    ports:
+      - 5432:5432
+    volumes:
+      - pg-data:/var/lib/postgresql/data
+volumes:
+  pg-data:
